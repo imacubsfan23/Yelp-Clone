@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom';
+import React from 'react';
 import "./App.css";
-import BusinessLandingPage from './components/BusinessLandingPage.js';
 import Search from './components/Search.js';
 
 function App() {

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Scroll from './Scroll.js';
 import BusinessList from './BusinessList.js';
 
 const Search = () => {
@@ -10,28 +9,18 @@ const Search = () => {
         fetch(`/api/${searchField}`)
             .then((res) => res.json())
             .then((data) => setData(data.message))
-            .catch(e => setData(e));
+            .catch(e => console.log(e));
     }, [searchField]);
-
-    const onSubmit = (e) => {
-        setSearchField(e.target.value);
-        e.preventDefault();
-    }
 
     if (searchField) {
         return (
             <>
-                <form action="/" method="get" onSubmit={onSubmit} name='search'>
-                    <input
-                        type="text"
-                        placeholder='Search in Naperville, IL'
-                        value={searchField || ''}
-                        onChange={(e) => setSearchField(e.target.value)}
-                        key='search' />
-                </form>
-                <Scroll>
-                    <BusinessList list={data} />
-                </Scroll>
+                <input
+                    type="text"
+                    placeholder='Search in Naperville, IL'
+                    value={searchField || ''}
+                    onChange={(e) => setSearchField(e.target.value)} />
+                <BusinessList list={data} />
             </>
         );
     } else {
@@ -39,9 +28,7 @@ const Search = () => {
             <>
                 <h1>Yelp Clone</h1>
                 <h2>Type something:</h2>
-                <form action="/" method="get" onSubmit={onSubmit} name='search'>
-                    <input type="text" placeholder='Search in Naperville, IL' value={searchField || ''} onChange={(e) => setSearchField(e.target.value)} />
-                </form>
+                <input type="text" placeholder='Search in Naperville, IL' value={searchField || ''} onChange={(e) => setSearchField(e.target.value)} />
             </>
         );
     }

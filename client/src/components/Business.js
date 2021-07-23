@@ -1,19 +1,32 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import '../index.css';
 
-export function Business(businessJSON) {
-    if (businessJSON.business) {
+function Business(businessJSON) {
+    const b = businessJSON.business;
+    const [data, setData] = React.useState(null);
+
+    React.useEffect(() => {
+        fetch(`/api/business/${b.alias}`)
+            .then((res) => res.json())
+            .then((data) => setData(data.message))
+            .catch(e => console.log(e));
+    }, [b]);
+
+    const handleSubmit = () => {
+        setData(b.alias);
+        console.log(data.alias);
+    }
+
+    if (b) {
         return (
             <>
                 <div className='row'>
-                    <div className='row col-6'>
-                        <img src={businessJSON.business.image_url} alt={businessJSON.business.name}></img>
+                    <div className='row col-6' >
+                        <img className='photo' src={b.image_url} alt={b.name}></img>
                     </div>
                     <div className='col-6'>
-                        <h1>{businessJSON.business.name}</h1>
-                        <Router>
-                            <Link to='/business'>More Info</Link>
-                        </Router>
+                        <h1>{b.name}</h1>
+                        <a href={'business/' + b.alias} onSubmit={handleSubmit}>More Info</a>
                     </div>
                 </div>
             </>
@@ -22,3 +35,5 @@ export function Business(businessJSON) {
         return (<p>no business found</p>)
     }
 };
+
+export default Business;
