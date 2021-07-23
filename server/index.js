@@ -15,8 +15,8 @@ const getBusinesses = async (query) => {
     return businessList;
 }
 
-app.get("/api", async (req, res) => {
-    res.json({ message: await getBusinesses('burger', alias = req.params.query) })
+app.get("/api/:term", async (req, res) => {
+    res.json({ message: await getBusinesses(req.params.term) })
 });
 
 app.get('*', (req, res) => {
