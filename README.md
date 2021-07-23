@@ -9,10 +9,13 @@ A simple clone of Yelp using the Yelp Fusion API
 * Create an account with yelp [here](https://www.yelp.com/signup)
 * [Follow the instructions here to get started with the Fusion API](https://www.yelp.com/developers/documentation/v3/get_started)
 * Clone this repository
-* In your terminal, cd into the "Yelp-Clone" Repository
-* run `npm install`
-* run `export YELP_API_KEY=YOUR_API_KEY_HERE` where `YOUR_API_KEY_HERE` is your API Key
-* Start application in terminal with `npm start` and go to `localhost:3000` in your browser
+* With your favorite editor, find the file `server/index.js` and change the `apiKey` variable to the api key you received from yelp.
+* In your terminal, cd into the "yelp-clone" Repository
+* Open two terminal windows in the yelp-clone repo
+* In the first terminal, while in the root folder, run `npm install`, then `node server/index.js`
+* In the second terminal, change directories into the client folder with `cd client`
+* While still in the 2nd terminal, run `npm install`, then `npm start`
+* Go into your browser and visit `localhost:3000`
 
 ## Original Task
 
