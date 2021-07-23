@@ -3,7 +3,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const yelp = require('yelp-fusion');
-const apiKey = 'Zjult5INDvWT3BpD-_S52coL7OBZQ4X7Xhe4-vgSj96XpuOlH2wH6yOP3FHsVUuHtvwWNSZU2mJ3a7KfyFu_nwnTg-_Yoa8sHH9ECmBUiJWTD5EI2X0g1sKZmyb6YHYx';
+const apiKey = '';
 const api = yelp.client(apiKey);
 
 const getBusiness = async (query) => {
