@@ -1,21 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../index.css';
 
-function Business(businessJSON) {
+const Business = (businessJSON) => {
     const b = businessJSON.business;
-    const [data, setData] = React.useState(null);
-
-    React.useEffect(() => {
-        fetch(`/api/business/${b.alias}`)
-            .then((res) => res.json())
-            .then((data) => setData(data.message))
-            .catch(e => console.log(e));
-    }, [b]);
-
-    const handleSubmit = () => {
-        setData(b.alias);
-        console.log(data.alias);
-    }
 
     if (b) {
         return (
@@ -26,14 +14,13 @@ function Business(businessJSON) {
                     </div>
                     <div className='col-6'>
                         <h1>{b.name}</h1>
-                        <a href={'business/' + b.alias} onSubmit={handleSubmit}>More Info</a>
+                        <Link to={'/business/' + b.alias}>More Info</Link>
                     </div>
                 </div>
             </>
         );
-    } else {
-        return (<p>no business found</p>)
     }
+    return;
 };
 
 export default Business;

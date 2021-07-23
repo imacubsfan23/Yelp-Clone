@@ -3,7 +3,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const yelp = require('yelp-fusion');
-const apiKey = 'Q4jCHFdYMNkEe05QCQJPfVpRzraLZ50oDWWntSJVjHgRM_kHPgTzJUTC6ejjCPb6MkgcEAD3p8MprCVXPNqfamg3fVOfrVrLIhFx3Slo0jN-ABNKqWS8OlaGjrT1YHYx';
+const apiKey = 'Zjult5INDvWT3BpD-_S52coL7OBZQ4X7Xhe4-vgSj96XpuOlH2wH6yOP3FHsVUuHtvwWNSZU2mJ3a7KfyFu_nwnTg-_Yoa8sHH9ECmBUiJWTD5EI2X0g1sKZmyb6YHYx';
 const api = yelp.client(apiKey);
 
 const getBusiness = async (query) => {
@@ -20,8 +20,8 @@ const getBusinesses = async (query) => {
     return businessList;
 }
 
-app.get('/api/business/:term', async (req, res) => {
-    res.json({ message: await getBusiness(req.params.term) })
+app.get('/api/business/:alias', async (req, res) => {
+    res.json({ message: await getBusiness(req.params.alias) })
 })
 
 app.get("/api/:term", async (req, res) => {

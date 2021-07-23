@@ -14,5 +14,6 @@
     "nodemon": "^2.0.12",
     "react-router-dom": "^5.2.0",
     "yelp-fusion": "^3.0.0"
-  }
+  },
+  "proxy": "http://localhost:3001/"
 }

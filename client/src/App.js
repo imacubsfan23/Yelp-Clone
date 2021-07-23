@@ -7,17 +7,6 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Search />
-        {/*         
-        <Router>
-          <Switch>
-            <Route path='/business'>
-              <BusinessLandingPage business={data} />
-            </Route>
-            <Route path='/'>
-            </Route>
-          </Switch>
-        </Router> */}
-
       </header>
     </div>
   );
