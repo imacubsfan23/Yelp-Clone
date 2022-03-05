@@ -3,16 +3,16 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const yelp = require('yelp-fusion');
-const apiKey = '';
+const apiKey = 'TbOeWHkKg-FRNhZMTcK4vld0w0l0DnjzEHr8x9Gj3qm3F9yOI9TLRIuEs4-GDr1T8wSXUVXGimIzYHGAsbKF2gGt7iibSPduKdsgMxf_7GYtZGcs9FqdQf5XPTX7YHYx';
 const api = yelp.client(apiKey);
 
-const getBusiness = async (query) => {
-    const searchResults = await api.search({ term: query, location: 'naperville' });
+const getBusiness = async (query, location = 'naperville') => {
+    const searchResults = await api.search({ term: query, location: location });
     return searchResults.jsonBody.businesses[0];
 }
 
-const getBusinesses = async (query) => {
-    const searchResults = await api.search({ term: query, location: 'naperville' });
+const getBusinesses = async (query, location = 'naperville') => {
+    const searchResults = await api.search({ term: query, location: location });
     const businessList = [];
     for (b of searchResults.jsonBody.businesses) {
         businessList.push(b);
