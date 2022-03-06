@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server/index.js",
-    "heroku-postbuild": "node server/index.js && cd client && npm install && npm audit fix && npm build"
+    "heroku-postbuild": "npm install && node server/index.js && cd client && npm install && npm audit fix && npm build"
   },
   "keywords": [],
   "author": "",
