@@ -21,7 +21,7 @@ const getBusinesses = async (query) => {
     return businessList;
 }
 
-app.use(express.static(path.join(__dirname, '../client/build')));
+//app.use(express.static(path.join(__dirname, '../client/build')));
 
 app.get('/api/business/:alias', async (req, res) => {
     res.json({ message: await getBusiness(req.params.alias) })
