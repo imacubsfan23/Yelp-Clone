@@ -1,7 +1,0 @@
-{
-  "scripts": {
-    "start": "react-scripts start",
-    "heroku-postbuild": "npm install && npm audit fix && npm run build"
-  },
-  "proxy": "http://localhost:3001/"
-}
