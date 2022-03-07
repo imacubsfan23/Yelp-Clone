@@ -5,6 +5,8 @@ const PORT = process.env.PORT || 3001;
 const yelp = require('yelp-fusion');
 const apiKey = 'TbOeWHkKg-FRNhZMTcK4vld0w0l0DnjzEHr8x9Gj3qm3F9yOI9TLRIuEs4-GDr1T8wSXUVXGimIzYHGAsbKF2gGt7iibSPduKdsgMxf_7GYtZGcs9FqdQf5XPTX7YHYx';
 const api = yelp.client(apiKey);
+const path = require('path');
+app.use(express.static(path.join(__dirname, '../client/build')));
 
 const getBusiness = async (query) => {
     const searchResults = await api.search({ term: query, location: 'naperville' });
@@ -29,7 +31,7 @@ app.get("/api/:term", async (req, res) => {
 });
 
 app.get('*', (req, res) => {
-    res.send('404');
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
 })
 
 app.listen(PORT, () => {
