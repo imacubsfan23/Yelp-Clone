@@ -3,5 +3,11 @@
     "start": "node server/index.js",
     "heroku-postbuild": "cd client && npm install && npm audit fix --force && npm run build"
   },
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12",
+    "react-router-dom": "^5.2.0",
+    "yelp-fusion": "^3.0.0"
+  },
   "proxy": "http://localhost:3001/"
 }
