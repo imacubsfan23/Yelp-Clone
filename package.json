@@ -1,6 +1,7 @@
 {
   "scripts": {
     "start": "node server/index.js",
+    "build": "node server/production.js",
     "heroku-postbuild": "cd client && npm install && npm audit fix --force && npm build"
   },
   "dependencies": {
