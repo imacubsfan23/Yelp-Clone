@@ -32,6 +32,7 @@ app.get('/api/:term', async (req, res) => {
 });
 
 app.get('*', (req, res) => {
+    console.log("in *");
     res.sendFile(path.join(__dirname, '../client/build/index.html'));
 })
 
