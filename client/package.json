@@ -4,5 +4,8 @@
     "build": "react-scripts build",
     "heroku-postbuild": "npm install && npm audit fix --force && npm run build"
   },
+  "engines": {
+    "node": "14.19.0"
+  },
   "proxy": "http://localhost:3001"
 }
