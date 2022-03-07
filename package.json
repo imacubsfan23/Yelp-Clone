@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "node server/index.js",
-    "heroku-postbuild": "cd client && npm install && npm audit fix --force && npm build"
+    "heroku-postbuild": "cd client && npm install && npm audit fix --force && npm run build"
   },
   "proxy": "http://localhost:3001/"
 }
