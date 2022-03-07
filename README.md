@@ -1,5 +1,6 @@
 # Yelp-Clone
 [Visit the site](https://yelp-clone-imacubsfan23.herokuapp.com)
+
 A simple clone of Yelp using the Yelp Fusion API
 
 * Front End: React.js, Bootstrap
