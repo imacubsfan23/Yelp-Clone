@@ -27,7 +27,7 @@ app.get('/api/business/:alias', async (req, res) => {
     res.json({ message: await getBusiness(req.params.alias) })
 })
 
-app.get("/api/:term", async (req, res) => {
+app.get('/api/:term', async (req, res) => {
     res.json({ message: await getBusinesses(req.params.term) })
 });
 
