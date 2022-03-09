@@ -1,9 +1,10 @@
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3001;
+require('dotenv').config();
 
 const yelp = require('yelp-fusion');
-const apiKey = 'TbOeWHkKg-FRNhZMTcK4vld0w0l0DnjzEHr8x9Gj3qm3F9yOI9TLRIuEs4-GDr1T8wSXUVXGimIzYHGAsbKF2gGt7iibSPduKdsgMxf_7GYtZGcs9FqdQf5XPTX7YHYx';
+const apiKey = process.env.YELP_API_KEY;
 const api = yelp.client(apiKey);
 const path = require('path');
 
